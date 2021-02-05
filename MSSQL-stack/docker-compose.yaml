@@ -4,14 +4,14 @@ services:
     image: "mcr.microsoft.com/mssql/server:2019-latest"
     restart: always
     environment:
-      - 'SA_PASSWORD=Cmd@sa@tito@123'
+      - 'SA_PASSWORD=YourPassword'
       - 'ACCEPT_EULA=Y'
       - 'MSSQL_PID=Developer'
-      - 'name=MSSQLKnabDb'
+      - 'name=MSSQLYourDb'
     ports:
       - "1433:1433"
     volumes:
       - ./mssql:/var/
       - ./mssql:/var/opt/mssql/data
     labels: 
-      NAME: "MSSQLKnabDb"
+      NAME: "MSSQLYourDb"
