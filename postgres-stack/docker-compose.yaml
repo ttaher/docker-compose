@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  postgres:
+    image: "mdillon/postgis:latest"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"

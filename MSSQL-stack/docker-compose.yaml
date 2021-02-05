@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    restart: always
+    environment:
+      - 'SA_PASSWORD=Cmd@sa@tito@123'
+      - 'ACCEPT_EULA=Y'
+      - 'MSSQL_PID=Developer'
+      - 'name=MSSQLKnabDb'
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./mssql:/var/
+      - ./mssql:/var/opt/mssql/data
+    labels: 
+      NAME: "MSSQLKnabDb"
